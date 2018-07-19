@@ -746,7 +746,7 @@ init_hardware(void)
 		udelay(10);
 		clk_reg[PWMCLK_CNTL] = 0x5A000006;		// Source=PLLD (500MHz)
 		udelay(100);
-		clk_reg[PWMCLK_DIV] = 0x5A000000 | (500<<12);	// set pwm div to 500, giving 1MHz
+		clk_reg[PWMCLK_DIV] = 0x5A000000 | (NUM_CBS/8<<12);	// set pwm div to 500, giving 1MHz
 		udelay(100);
 		clk_reg[PWMCLK_CNTL] = 0x5A000016;		// Source=PLLD and enable
 		udelay(100);
